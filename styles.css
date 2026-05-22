@@ -1,0 +1,119 @@
+:root {
+  color-scheme: dark;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #141712;
+  color: #f7f2e8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(181, 209, 93, 0.10), transparent 32rem),
+    radial-gradient(circle at 72% 38%, rgba(219, 213, 166, 0.16), transparent 34rem),
+    #141712;
+}
+
+.stage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 420px;
+  overflow: hidden;
+  background: #141712;
+}
+
+#render-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: none;
+}
+
+#render-canvas:active {
+  cursor: grabbing;
+}
+
+.controls {
+  position: absolute;
+  left: clamp(1rem, 2.4vw, 2rem);
+  bottom: clamp(1rem, 2.4vw, 1.6rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem;
+  color: rgba(247, 242, 232, 0.84);
+  background: rgba(11, 12, 10, 0.44);
+  border: 1px solid rgba(247, 242, 232, 0.14);
+  border-radius: 0.75rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(14px);
+}
+
+.controls button {
+  min-width: 6.35rem;
+  min-height: 2.25rem;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0 0.8rem;
+  color: #10120f;
+  background: rgba(247, 242, 232, 0.92);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 720;
+  line-height: 1.2;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: #ffffff;
+}
+
+.controls button:focus-visible {
+  outline: 2px solid #8fd3ff;
+  outline-offset: 2px;
+}
+
+.hint {
+  padding: 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.fallback {
+  position: absolute;
+  inset: auto 1rem 1rem;
+  margin: 0;
+  color: #f7f2e8;
+}
+
+@media (max-width: 620px) {
+  .stage {
+    min-height: 100dvh;
+  }
+
+  .controls {
+    right: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hint {
+    flex-basis: 100%;
+  }
+}

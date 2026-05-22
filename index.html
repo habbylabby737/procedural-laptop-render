@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Procedural 3D Laptop Render</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="stage" aria-label="Procedural 3D laptop render">
+      <canvas id="render-canvas"></canvas>
+      <div class="controls" aria-label="3D render controls">
+        <button type="button" data-action="spin" aria-pressed="true">Pause Spin</button>
+        <button type="button" data-action="reset">Reset View</button>
+        <span class="hint">Drag to orbit · wheel to zoom · Space toggles spin</span>
+      </div>
+      <noscript>
+        <p class="fallback">JavaScript is required to view the render.</p>
+      </noscript>
+    </main>
+    <script src="./src/main.js" type="module"></script>
+  </body>
+</html>
